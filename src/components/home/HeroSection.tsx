@@ -13,9 +13,9 @@ export function HeroSection() {
         className="object-cover"
       />
       <div className="absolute inset-0 bg-black/20 md:bg-black/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:hidden" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-transparent md:hidden" />
       
-      <div className="absolute inset-0 flex items-end md:items-center pb-16 md:pb-0">
+      <div className="absolute inset-0 flex items-start md:items-center pt-24 md:pt-0">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-xl text-white">
             <h1 className="font-serif text-4xl md:text-7xl font-medium leading-tight mb-4 md:mb-6 tracking-wide">
