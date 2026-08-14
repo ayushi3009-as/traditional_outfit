@@ -12,15 +12,16 @@ export function HeroSection() {
         priority
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/20 md:bg-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent md:hidden" />
       
-      <div className="absolute inset-0 flex items-center">
+      <div className="absolute inset-0 flex items-end md:items-center pb-16 md:pb-0">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-xl text-white">
-            <h1 className="font-serif text-5xl md:text-7xl font-medium leading-tight mb-6 tracking-wide">
+            <h1 className="font-serif text-4xl md:text-7xl font-medium leading-tight mb-4 md:mb-6 tracking-wide">
               Everyday Elegance, Elevated.
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-md font-light leading-relaxed">
+            <p className="text-base md:text-xl text-gray-200 mb-8 md:mb-10 max-w-md font-light leading-relaxed">
               Premium fabrics. Exquisite craftsmanship. Designed to make you feel beautiful in every moment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
