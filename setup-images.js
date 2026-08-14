@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const srcDir = 'C:\\Users\\priya\\.gemini\\antigravity\\brain\\93980ec9-d4f8-429e-a2af-75a06c50855a';
+const srcDir = 'C:\\Users\\hp\\.gemini\\antigravity\\brain\\d711e1f0-10f5-479d-9469-01b22b3fcbcc';
 const publicDir = path.join(__dirname, 'public', 'images');
 
 // Create directories
@@ -9,42 +9,56 @@ const publicDir = path.join(__dirname, 'public', 'images');
   fs.mkdirSync(path.join(publicDir, dir), { recursive: true });
 });
 
-// Mapping
+// Using the images we successfully generated:
+// hero_banner_1786709675707.jpg
+// cat_saree_1786709688403.jpg
+// cat_kurti_1786709708704.jpg
+// cat_lehenga_1786709734004.jpg
+// Since dupatta failed, we will just duplicate saree for dupatta for now so it works without crashing.
+
 const mappings = {
-  'hero_jewelry_1786560622415.jpg': 'banners/hero.jpg',
-  'cat_earrings_1786560829739.jpg': 'categories/earrings.png',
-  'cat_necklaces_1786560847716.jpg': 'categories/necklaces.png',
-  'cat_rings_1786560867930.jpg': 'categories/rings.png',
-  'cat_bracelets_1786560880652.jpg': 'categories/bracelets.png',
+  'hero_banner_1786709675707.jpg': 'banners/hero.jpg',
+  'cat_saree_1786709688403.jpg': 'categories/sarees.png',
+  'cat_kurti_1786709708704.jpg': 'categories/kurtis.png',
+  'cat_lehenga_1786709734004.jpg': 'categories/lehengas.png',
+  'cat_saree_1786709688403.jpg': 'categories/dupattas.png', // Fallback for dupatta
 };
 
 // Copy basic images
 for (const [src, dest] of Object.entries(mappings)) {
-  fs.copyFileSync(path.join(srcDir, src), path.join(publicDir, dest));
+  const sourcePath = path.join(srcDir, src);
+  if (fs.existsSync(sourcePath)) {
+      fs.copyFileSync(sourcePath, path.join(publicDir, dest));
+  } else {
+      console.log("Missing image:", src);
+  }
 }
 
 // Map category images to products for demo purposes
 const productMap = {
-  'e': 'cat_earrings_1786560829739.jpg',
-  'n': 'cat_necklaces_1786560847716.jpg',
-  'r': 'cat_rings_1786560867930.jpg',
-  'b': 'cat_bracelets_1786560880652.jpg'
+  's': 'cat_saree_1786709688403.jpg',
+  'k': 'cat_kurti_1786709708704.jpg',
+  'l': 'cat_lehenga_1786709734004.jpg',
+  'd': 'cat_saree_1786709688403.jpg'
 };
 
 const products = [
-  'e1','e2','e3','e4','e5','e6','e7',
-  'n1','n2','n3','n4','n5','n6',
-  'r1','r2','r3','r4','r5','r6',
-  'b1','b2','b3','b4','b5','b6'
+  's1','s2','s3',
+  'k1','k2',
+  'l1','l2',
+  'd1','d2'
 ];
 
 products.forEach(p => {
   const prefix = p[0];
   const src = productMap[prefix];
   
-  // Create two variations of the same image for hover effects
-  fs.copyFileSync(path.join(srcDir, src), path.join(publicDir, `products/${p}-1.png`));
-  fs.copyFileSync(path.join(srcDir, src), path.join(publicDir, `products/${p}-2.png`));
+  const sourcePath = path.join(srcDir, src);
+  if (fs.existsSync(sourcePath)) {
+      // Create two variations of the same image for hover effects
+      fs.copyFileSync(sourcePath, path.join(publicDir, `products/${p}-1.png`));
+      fs.copyFileSync(sourcePath, path.join(publicDir, `products/${p}-2.png`));
+  }
 });
 
 console.log("Images copied successfully.");

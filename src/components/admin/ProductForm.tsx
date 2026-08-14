@@ -15,7 +15,7 @@ export default function ProductForm({ initialProduct }: { initialProduct?: Produ
   const [formData, setFormData] = useState<Partial<Product>>(initialProduct || {
     name: "",
     slug: "",
-    category: "Earrings",
+    category: "Sarees",
     price: 0,
     originalPrice: 0,
     stock: 0,
@@ -103,10 +103,10 @@ export default function ProductForm({ initialProduct }: { initialProduct?: Produ
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
                     <select required name="category" value={formData.category} onChange={handleChange} className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-brand-charcoal focus:border-brand-charcoal">
-                      <option>Earrings</option>
-                      <option>Necklaces</option>
-                      <option>Rings</option>
-                      <option>Bracelets</option>
+                      <option>Sarees</option>
+                      <option>Kurtis</option>
+                      <option>Lehengas</option>
+                      <option>Dupattas</option>
                     </select>
                   </div>
                 </div>
