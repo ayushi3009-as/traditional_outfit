@@ -85,9 +85,9 @@ function ShopContent({ initialCategory }: { initialCategory?: string }) {
       <div className="flex flex-col md:flex-row justify-between items-end md:items-center mb-12 gap-4">
         <div>
           <h1 className="font-serif text-4xl md:text-5xl font-medium mb-2">
-            {initialCategory ? initialCategory.charAt(0).toUpperCase() + initialCategory.slice(1) : "Shop All Jewelry"}
+            {initialCategory ? initialCategory.charAt(0).toUpperCase() + initialCategory.slice(1) : "Shop All Traditional Wear"}
           </h1>
-          <p className="text-gray-500">Everyday pieces designed to shine longer. ({filteredProducts.length} items)</p>
+          <p className="text-gray-500">Premium outfits designed for everyday elegance. ({filteredProducts.length} items)</p>
         </div>
         
         <SortDropdown value={sortBy} onChange={setSortBy} />
