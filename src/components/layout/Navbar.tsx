@@ -12,10 +12,10 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const NAV_LINKS = [
   { name: "New Arrivals", href: "/shop?filter=new" },
-  { name: "Earrings", href: "/shop/earrings" },
-  { name: "Necklaces", href: "/shop/necklaces" },
-  { name: "Rings", href: "/shop/rings" },
-  { name: "Bracelets", href: "/shop/bracelets" },
+  { name: "Sarees", href: "/shop/sarees" },
+  { name: "Kurtis", href: "/shop/kurtis" },
+  { name: "Lehengas", href: "/shop/lehengas" },
+  { name: "Dupattas", href: "/shop/dupattas" },
   { name: "Best Sellers", href: "/shop?filter=best-seller" },
 ];
 

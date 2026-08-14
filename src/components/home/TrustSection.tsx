@@ -5,12 +5,12 @@ export function TrustSection() {
   const trusts = [
     {
       icon: <Sparkles className="w-6 h-6" />,
-      title: "Anti-Tarnish",
-      description: "Designed to retain its shine.",
+      title: "Premium Fabrics",
+      description: "Soft, breathable, and luxurious.",
     },
     {
       icon: <Droplets className="w-6 h-6" />,
-      title: "Water Resistant",
+      title: "Easy Care",
       description: "Made for everyday wear.",
     },
     {
@@ -21,7 +21,7 @@ export function TrustSection() {
     {
       icon: <Gem className="w-6 h-6" />,
       title: "Everyday Luxury",
-      description: "Premium style without the premium fuss.",
+      description: "Premium style without the premium price.",
     },
   ];
 
